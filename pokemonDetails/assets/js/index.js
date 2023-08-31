@@ -62,30 +62,38 @@ async function generatePokemonHTML({
         />
         
         <section class="pokemon__about">
-          <h2>About</h2>
-          <div>
-            <span>Base Exp ${base_experience}</span>
-            <span>Height ${(height / 10).toFixed(2)} cm</span>
-            <span>Weight ${(weight / 10).toFixed(2)} kg</span>
-            <span>
-              Abilities ${
-                abilities
-                  .map(({ ability }) => `${ability.name}`)
-                  .join(', ')
-              }
-            </span>
+          <h2 class="pokemon__about__title">About</h2>
+          <div class="pokemon__about__data">
+            <p><span>Base Exp</span> <span>${base_experience}</span></p>
+            <p><span>Height</span> <span><${(height / 10).toFixed(2)} cm</span></p>
+            <p><span>Weight</span> <span>${(weight / 10).toFixed(2)} kg</span></p>
+            <p>
+              <span>Abilities</span>
+              <span>
+                ${
+                  abilities
+                    .map(({ ability }) => `${ability.name}`)
+                    .join(', ')
+                }
+              </span>
+            </p>
           </div>
           <div class="pokemon__about__breeding">
-            <h3>Breeding</h3>
-            <span>Shape ${shape.name}</span>
-            <span>Egg Groups ${
-              egg_groups
-                .map(({ name }) => name)
-                .join(', ')
-              }
-            </span>
-            <span>Growth Rate ${growth_rate.name}</span>
-            <span>Habitat ${habitat.name}</span>
+            <h3 class="pokemon__about__breeding__title">Breeding</h3>
+            <p><span>Shape</span> <span>${shape.name}</span></p>
+            <p>
+              <span>Egg Groups</span> 
+              <span>
+                ${
+                  egg_groups
+                    .map(({ name }) => name)
+                    .join(', ')
+                }
+              </span>
+              
+            </p>
+            <p><span>Growth Rate</span> <span>${growth_rate.name}</span></p>
+            <p><span>Habitat</span> <span>${habitat.name}</span></p>
           </div>
         </section>
       </section>
